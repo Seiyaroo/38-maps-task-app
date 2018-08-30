@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MapsTaskApp</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="disneyland">disneyland</string>
+    <string name="toggle_satellite">Toggle Satellite</string>
+    <string name="zoom_in">Zoom In</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="set_end">Set End</string>
+    <string name="set_start">Set Start</string>
+    <string name="end_lat_lng">end lat,lng</string>
+    <string name="start_lat_lng">start lat,lng</string>
+    <string name="title_activity_errand_list">ErrandListActivity</string>
+</resources>
