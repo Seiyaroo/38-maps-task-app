@@ -89,6 +89,11 @@
             android:text="@string/disneyland"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/goToMyLocation"
+            android:text="@string/go_to_my_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

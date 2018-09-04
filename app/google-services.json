@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "384395995199",
+    "firebase_url": "https://maps-task-app-5c00b.firebaseio.com",
+    "project_id": "maps-task-app-5c00b",
+    "storage_bucket": "maps-task-app-5c00b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384395995199:android:0c02d6c4175eba37",
+        "android_client_info": {
+          "package_name": "com.example.mapstaskapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384395995199-1j5stcd9dv7r63ms9ppkkqh37cmbnksr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mapstaskapp",
+            "certificate_hash": "fce2cf3792d8480733f46d6b461994c327d43856"
+          }
+        },
+        {
+          "client_id": "384395995199-kfu8qog4ubjibis8mnkbidc88acdtjcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEHSBxIlCY4-pAbwAX5KB8dqGtLXqiilM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384395995199-kfu8qog4ubjibis8mnkbidc88acdtjcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
