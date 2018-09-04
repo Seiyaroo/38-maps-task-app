@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-abstract class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private static final int LOCATION_REFRESH_TIME = 1;
     private static final int LOCATION_REFRESH_DISTANCE = 1;
@@ -53,36 +54,7 @@ abstract class MapsActivity extends FragmentActivity implements OnMapReadyCallba
 
         final Intent data = getIntent();
 
-        DatabaseReference errands = FirebaseDatabase.getInstance().getReference("errands");
-
-        DatabaseReference errandRef = errands;
-
-//        errandRef.child(data.getStringExtra("id"));
-        errandRef.addValueEventListener(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Errand errand = Errand.fromSnapshot(dataSnapshot);
-                mMap.addMarker(new MarkerOptions().title("start").position(errand.start));
-                mMap.addMarker(new MarkerOptions().title("end").position(errand.end));
-
-                double centerLatitude = (errand.start.latitude + errand.end.latitude) / 2;
-                double centerLongitude = (errand.start.longitude + errand.end.longitude) / 2;
-                LatLng center = new LatLng(centerLatitude, centerLongitude);
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(center));
-
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
-
-                mMap.getCameraPosition();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
+        FirebaseDatabase.getInstance();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             initializeLocationListener();
@@ -118,7 +90,7 @@ abstract class MapsActivity extends FragmentActivity implements OnMapReadyCallba
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -146,5 +118,15 @@ abstract class MapsActivity extends FragmentActivity implements OnMapReadyCallba
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
     }
 }
